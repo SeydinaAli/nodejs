@@ -31,20 +31,5 @@ app.put('/taches/:id', (req, res) => {
     }
 });
 
-// Supprimer une tâche
-app.delete('/taches/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const index = taches.findIndex(t => t.id === id);
 
-    if (index !== -1) {
-      taches.splice(index, 1);
-      res.status(204).send();
-  } else {
-      res.status(404).send({ message: "Tâche non trouvée" });
-  }
-});
-
-app.listen(port, () => {
-  console.log(Serveur en écoute sur le port ${port});
-});
 
